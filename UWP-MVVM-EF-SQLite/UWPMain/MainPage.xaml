@@ -1,13 +1,17 @@
 ﻿<Page
-    x:Class="UWPMain.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UWPMain"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+	x:Class="UWPMain.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" Width="700" Height="300"
+	>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<TextBlock Margin="10,23,0,0" TextWrapping="Wrap" Text="MVVM Example App" VerticalAlignment="Top" Width="223" FontSize="24" HorizontalAlignment="Center"/>
+		<TextBlock HorizontalAlignment="Left" Margin="50,90,0,0" TextWrapping="Wrap" Text="Type something here and tab or click out to update binding:" VerticalAlignment="Top"/>
+		<TextBox Text="{x:Bind Task.Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="50,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
+		<TextBlock HorizontalAlignment="Left" Margin="50,182,0,0" TextWrapping="Wrap" Text="Bound string will appear here:" VerticalAlignment="Top"/>
+		<TextBlock Text="{x:Bind Task.Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="50,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+	</Grid>
 </Page>
