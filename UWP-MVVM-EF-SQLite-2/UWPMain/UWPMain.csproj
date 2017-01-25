@@ -95,9 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Repository.cs" />
+    <Compile Include="DAL\TaskContext.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170124064732_FirstMigration.cs" />
+    <Compile Include="Migrations\20170124064732_FirstMigration.designer.cs">
+      <DependentUpon>20170124064732_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\TaskContextModelSnapshot.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NotificationBase.cs" />
@@ -129,6 +136,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

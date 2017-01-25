@@ -13,5 +13,7 @@
 		<TextBox Text="{x:Bind Task.Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="50,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398"/>
 		<TextBlock HorizontalAlignment="Left" Margin="50,182,0,0" TextWrapping="Wrap" Text="Bound string will appear here:" VerticalAlignment="Top"/>
 		<TextBlock Text="{x:Bind Task.Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="50,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+		<Button Content="Save" Click="{x:Bind Task.Save}" HorizontalAlignment="Left" Margin="467,115,0,0" VerticalAlignment="Top"/>
+		<Button Content="Load" Click="{x:Bind Task.Load}" HorizontalAlignment="Left" Margin="535,115,0,0" VerticalAlignment="Top"/>
 	</Grid>
 </Page>
