@@ -1,11 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-using UWPMain.DAL;
+using ModelViewModel.DAL;
 
-namespace UWPMain.Migrations
+namespace ModelViewModel.Migrations
 {
     [DbContext(typeof(TaskContext))]
     partial class TaskContextModelSnapshot : ModelSnapshot

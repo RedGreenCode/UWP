@@ -1,8 +1,7 @@
 ﻿using System.Linq;
+using ModelViewModel.Models;
 
-using UWPMain.Models;
-
-namespace UWPMain.DAL
+namespace ModelViewModel.DAL
 {
 	public class Repository
 	{

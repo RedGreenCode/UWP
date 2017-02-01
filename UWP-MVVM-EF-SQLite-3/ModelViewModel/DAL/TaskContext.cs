@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ModelViewModel.Models;
 
-using UWPMain.Models;
-
-namespace UWPMain.DAL
+namespace ModelViewModel.DAL
 {
 	public sealed class TaskContext : DbContext
 	{

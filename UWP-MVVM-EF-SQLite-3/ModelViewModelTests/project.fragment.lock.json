@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "exports": {
+    "ModelViewModel/1.0.0": {
+      "type": "project",
+      "framework": ".NETStandard,Version=v1.4",
+      "compile": {
+        "bin/Debug/ModelViewModel.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/ModelViewModel.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/ModelViewModel.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

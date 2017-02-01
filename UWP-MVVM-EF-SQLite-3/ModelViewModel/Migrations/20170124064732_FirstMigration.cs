@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace UWPMain.Migrations
+namespace ModelViewModel.Migrations
 {
     public partial class FirstMigration : Migration
     {

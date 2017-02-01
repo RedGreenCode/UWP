@@ -1,4 +1,4 @@
-﻿namespace UWPMain.Models
+﻿namespace ModelViewModel.Models
 {
 	public class Task
 	{

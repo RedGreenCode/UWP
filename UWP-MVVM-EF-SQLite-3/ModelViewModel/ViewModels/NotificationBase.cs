@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace UWPMain.ViewModels
+namespace ModelViewModel.ViewModels
 {
 	/// <summary>
 	/// Forked from https://github.com/johnshew/Minimal-UWP-MVVM-CRUD/blob/master/Simple%20MVVM%20UWP%20with%20CRUD/ViewModels/ViewModelHelpers.cs

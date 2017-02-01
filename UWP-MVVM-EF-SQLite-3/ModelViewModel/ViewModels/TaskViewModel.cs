@@ -1,7 +1,7 @@
-﻿using UWPMain.Models;
-using UWPMain.DAL;
+﻿using ModelViewModel.DAL;
+using ModelViewModel.Models;
 
-namespace UWPMain.ViewModels
+namespace ModelViewModel.ViewModels
 {
 	public class TaskViewModel : NotificationBase<Task>
 	{
@@ -32,7 +32,7 @@ namespace UWPMain.ViewModels
 
 		public void Load()
 		{
-			_task = _repository.LoadTask();
+			_task = _repository.LoadTask() ?? new Task();
 			Name = _task.Name;
 			Id = _task.Id;
 		}
