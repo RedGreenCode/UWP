@@ -5,24 +5,22 @@ namespace ModelViewModel.ViewModels
 {
 	public class TaskViewModel : NotificationBase<Task>
 	{
-		private Task _task;
-		private readonly Repository _repository;
+		private readonly IRepository _repository;
 
 		public TaskViewModel()
 		{
-			_task = new Task();
 			_repository = new Repository();
+		}
+
+		public TaskViewModel(IRepository repository)
+		{
+			_repository = repository;
 		}
 
 		public string Name
 		{
 			get { return This.Name; }
 			set { SetProperty(This.Name, value, () => This.Name = value); }
-		}
-
-		private int Id
-		{
-			set { SetProperty(This.Id, value, () => This.Id = value); }
 		}
 
 		public void Save()
@@ -32,9 +30,9 @@ namespace ModelViewModel.ViewModels
 
 		public void Load()
 		{
-			_task = _repository.LoadTask() ?? new Task();
-			Name = _task.Name;
-			Id = _task.Id;
+			var task = _repository.LoadTask() ?? new Task();
+			SetModel(task);
+			Name = task.Name;
 		}
 	}
 }

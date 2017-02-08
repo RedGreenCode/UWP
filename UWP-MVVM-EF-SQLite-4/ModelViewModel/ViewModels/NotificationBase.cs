@@ -24,7 +24,6 @@ namespace ModelViewModel.ViewModels
 		// SetField(()=> somewhere.Name = value; somewhere.Name, value) // Advanced case where you rely on another property
 		protected void SetProperty<T>(T currentValue, T newValue, Action doSet, [CallerMemberName] string property = null)
 		{
-			if (EqualityComparer<T>.Default.Equals(currentValue, newValue)) return;
 			doSet.Invoke();
 			RaisePropertyChanged(property);
 		}
@@ -37,13 +36,18 @@ namespace ModelViewModel.ViewModels
 
 	public class NotificationBase<T> : NotificationBase where T : class, new()
 	{
-		protected readonly T This;
+		protected T This;
 
 		public static implicit operator T(NotificationBase<T> thing) { return thing.This; }
 
 		protected NotificationBase(T thing = null)
 		{
 			This = thing ?? new T();
+		}
+
+		protected void SetModel(T model)
+		{
+			This = model;
 		}
 	}
 }

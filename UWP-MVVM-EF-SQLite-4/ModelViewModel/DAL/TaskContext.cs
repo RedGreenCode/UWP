@@ -7,14 +7,18 @@ namespace ModelViewModel.DAL
 	{
 		internal DbSet<Task> Tasks { get; set; }
 
-		public TaskContext()
-		{
-			Database.Migrate();
-		}
+		public TaskContext() { }
+
+		public TaskContext(DbContextOptions<TaskContext> options)
+			: base(options)
+		{ }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlite("Filename=Tasks.db");
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseSqlite("Filename=Tasks.db");
+			}
 		}
 	}
 }

@@ -1,34 +1,40 @@
 ﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ModelViewModel.Models;
 
 namespace ModelViewModel.DAL
 {
-	public class Repository
+	public class Repository : IRepository
 	{
+		private readonly TaskContext _taskContext;
+
+		public Repository(TaskContext taskContext)
+		{
+			_taskContext = taskContext;
+		}
+
+		public Repository()
+		{
+			_taskContext = null;
+		}
+
 		public void SaveTask(Task model)
 		{
-			using (var db = new TaskContext())
-			{
-				if (model.Id > 0)
-				{
-					db.Attach(model);
-					db.Update(model);
-				}
-				else
-				{
-					db.Add(model);
-				}
-				db.SaveChanges();
-			}
+			TaskContext taskContext;
+			taskContext = _taskContext ?? new TaskContext();
+
+			if (model.Id == 0) taskContext.Add(model);
+			else taskContext.Entry(model).State = EntityState.Modified;
+			taskContext.SaveChanges();
 		}
 
 		public Task LoadTask()
 		{
-			using (var db = new TaskContext())
-			{
-				return (from t in db.Tasks
-						select t).LastOrDefault();
-			}
+			var taskContext = _taskContext ?? new TaskContext();
+
+			var task = (from t in taskContext.Tasks
+					select t).LastOrDefault();
+			return task;
 		}
 	}
 }
